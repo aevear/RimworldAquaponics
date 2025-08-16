@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Library</OutputType>
+    <LangVersion>latest</LangVersion>
+    <Nullable>disable</Nullable>
+    <AssemblyName>Aquaponics</AssemblyName>
+    <RootNamespace>Aquaponics</RootNamespace>
+    <OutputPath>..\..\Assemblies</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <!-- Updated to RimWorld 1.5 -->
+    <PackageReference Include="Krafs.Rimworld.Ref" Version="1.5.4062" />
+  </ItemGroup>
+  
+  <ItemGroup>
+  <!-- RimWorld assemblies -->
+    <Reference Include="Assembly-CSharp">
+      <HintPath>/Users/aevear/Library/Application%20Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Contents/Resources/Data/Managed/Assembly-CSharp.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>/Users/aevear/Library/Application%20Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Contents/Resources/Data/Managed/UnityEngine.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>/Users/aevear/Library/Application%20Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Contents/Resources/Data/Managed/UnityEngine.CoreModule.dll</HintPath>
+      <Private>false</Private>
+    </Reference>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,9 @@
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Assemblies/net48/Aquaponics.dll
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Assemblies/net48/Aquaponics.pdb
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Source/Aquaponics/obj/Debug/net48/Aquaponics.csproj.AssemblyReference.cache
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Source/Aquaponics/obj/Debug/net48/Aquaponics.GeneratedMSBuildEditorConfig.editorconfig
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Source/Aquaponics/obj/Debug/net48/Aquaponics.AssemblyInfoInputs.cache
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Source/Aquaponics/obj/Debug/net48/Aquaponics.AssemblyInfo.cs
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Source/Aquaponics/obj/Debug/net48/Aquaponics.csproj.CoreCompileInputs.cache
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Source/Aquaponics/obj/Debug/net48/Aquaponics.dll
+/Users/aevear/Library/Application Support/Steam/steamapps/common/RimWorld/RimWorldMac.app/Mods/Aquaponics/Source/Aquaponics/obj/Debug/net48/Aquaponics.pdb

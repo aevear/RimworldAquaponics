@@ -1,0 +1,95 @@
+<Defs>
+    <ThingDef ParentName="BuildingBase">
+        <defName>AquaponicsBasin</defName>
+        <label>Aquaponics basin</label>
+        <description>A nutrient bath for growing plants while also raising fish for meat. Fish
+            require temperatures between 10°C and 42°C to survive and reproduce.</description>
+        <thingClass>Aquaponics.Building_Aquaponics</thingClass>
+        <noRightClickDraftAttack>true</noRightClickDraftAttack>
+        <graphicData>
+            <texPath>Aquaponics_Basin/Aquaponics</texPath>
+            <graphicClass>Graphic_Multi</graphicClass>
+            <drawSize>1,4</drawSize>
+        </graphicData>
+        <altitudeLayer>LowPlant</altitudeLayer>
+        <defaultPlacingRot>East</defaultPlacingRot>
+        <passability>PassThroughOnly</passability>
+        <pathCost>30</pathCost>
+        <fillPercent>0.30</fillPercent>
+        <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
+        <statBases>
+            <WorkToBuild>2800</WorkToBuild>
+            <MaxHitPoints>180</MaxHitPoints>
+            <Flammability>0.5</Flammability>
+            <Cleanliness>-3</Cleanliness>
+        </statBases>
+        <size>1,4</size>
+        <costList>
+            <Steel>100</Steel>
+            <ComponentIndustrial>1</ComponentIndustrial>
+        </costList>
+        <fertility>2.8</fertility>
+        <building>
+            <defaultPlantToGrow>Plant_Rice</defaultPlantToGrow>
+            <sowTag>Hydroponic</sowTag>
+        </building>
+        <tickerType>Rare</tickerType>
+        <comps>
+            <li Class="CompProperties_Forbiddable" />
+            <li Class="CompProperties_Flickable" />
+            <li Class="CompProperties_Power">
+                <compClass>CompPowerTrader</compClass>
+                <basePowerConsumption>70</basePowerConsumption>
+            </li>
+        </comps>
+        <researchPrerequisites>
+            <li>Hydroponics</li>
+        </researchPrerequisites>
+        <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
+        <designationCategory>Production</designationCategory>
+    </ThingDef>
+
+    <WorkGiverDef>
+        <defName>PopulateAquaponics</defName>
+        <label>populate aquaponics</label>
+        <giverClass>Aquaponics.WorkGiver_PopulateAquaponics</giverClass>
+        <workType>PopulateAquaponics</workType>
+        <priorityInType>100</priorityInType>
+        <verb>stock</verb>
+        <gerund>stocking</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
+
+    <JobDef>
+        <defName>PopulateAquaponics</defName>
+        <driverClass>Aquaponics.JobDriver_PopulateAquaponics</driverClass>
+        <reportString>stocking aquaponics with fish.</reportString>
+        <joyDuration>4000</joyDuration>
+        <joyMaxParticipants>1</joyMaxParticipants>
+        <casualInterruptible>false</casualInterruptible>
+    </JobDef>
+
+    <WorkTypeDef>
+        <defName>PopulateAquaponics</defName>
+        <labelShort>Aquaponics</labelShort>
+        <pawnLabel>aquaculturist</pawnLabel>
+        <gerundLabel>stocking aquaponics</gerundLabel>
+        <description>Stock aquaponics basins with fish for breeding.</description>
+        <verb>Stock</verb>
+        <naturalPriority>850</naturalPriority>
+        <alwaysStartActive>true</alwaysStartActive>
+        <workTags>
+            <li>Animals</li>
+            <li>Hauling</li>
+        </workTags>
+        <relevantSkills>
+            <li>Animals</li>
+        </relevantSkills>
+        <workGiversByPriority>
+            <li>PopulateAquaponics</li>
+        </workGiversByPriority>
+    </WorkTypeDef>
+</Defs>
