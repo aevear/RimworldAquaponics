@@ -10,8 +10,6 @@
 
 <br>
 
-[![badge-workshop-subscribers]][workshop-link] [![badge-workshop-favorites]][workshop-link] [![badge-version]][workshop-link]
-
 Provides an alternative production table to Hydroponics, Aquaponics!
 
 ---
