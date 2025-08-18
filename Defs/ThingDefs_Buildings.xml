@@ -53,7 +53,7 @@
         <defName>PopulateAquaponics</defName>
         <label>populate aquaponics</label>
         <giverClass>Aquaponics.WorkGiver_PopulateAquaponics</giverClass>
-        <workType>PopulateAquaponics</workType>
+        <workType>Handling</workType>
         <priorityInType>100</priorityInType>
         <verb>stock</verb>
         <gerund>stocking</gerund>
@@ -72,24 +72,4 @@
         <casualInterruptible>false</casualInterruptible>
     </JobDef>
 
-    <WorkTypeDef>
-        <defName>PopulateAquaponics</defName>
-        <labelShort>Aquaponics</labelShort>
-        <pawnLabel>aquaculturist</pawnLabel>
-        <gerundLabel>stocking aquaponics</gerundLabel>
-        <description>Stock aquaponics basins with fish for breeding.</description>
-        <verb>Stock</verb>
-        <naturalPriority>850</naturalPriority>
-        <alwaysStartActive>true</alwaysStartActive>
-        <workTags>
-            <li>Animals</li>
-            <li>Hauling</li>
-        </workTags>
-        <relevantSkills>
-            <li>Animals</li>
-        </relevantSkills>
-        <workGiversByPriority>
-            <li>PopulateAquaponics</li>
-        </workGiversByPriority>
-    </WorkTypeDef>
 </Defs>
