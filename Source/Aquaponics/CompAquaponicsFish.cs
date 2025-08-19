@@ -4,6 +4,7 @@ using Verse.AI;
 using System;
 using System.Collections.Generic;
 
+// Defines properties related to the Aquaponics building
 namespace Aquaponics
 {
     public class Building_Aquaponics : Building_PlantGrower
@@ -195,6 +196,7 @@ namespace Aquaponics
             return string.IsNullOrEmpty(baseString) ? fishStatus : baseString + "\n" + fishStatus;
         }
 
+        // Defines the gizmos available for the Aquaponics building
         public override IEnumerable<Gizmo> GetGizmos()
         {
             foreach (Gizmo gizmo in base.GetGizmos())
