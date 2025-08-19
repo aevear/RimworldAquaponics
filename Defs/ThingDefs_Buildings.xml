@@ -1,4 +1,5 @@
 <Defs>
+    <!-- Creates an item - Aquaponics table-->
     <ThingDef ParentName="BuildingBase">
         <defName>AquaponicsBasin</defName>
         <label>Aquaponics basin</label>
@@ -49,6 +50,7 @@
         <designationCategory>Production</designationCategory>
     </ThingDef>
 
+    <!-- Defines a work type for populating aquaponics -->
     <WorkGiverDef>
         <defName>PopulateAquaponics</defName>
         <label>populate aquaponics</label>
@@ -63,6 +65,7 @@
         <prioritizeSustains>true</prioritizeSustains>
     </WorkGiverDef>
 
+    <!-- Defines a job for populating aquaponics -->
     <JobDef>
         <defName>PopulateAquaponics</defName>
         <driverClass>Aquaponics.JobDriver_PopulateAquaponics</driverClass>
