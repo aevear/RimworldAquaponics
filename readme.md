@@ -1,5 +1,5 @@
 <div align="center">
-  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3005196131">
+  <a href="https://steamcommunity.com/sharedfiles/filedetails/?id=3549764374">
     <img src="./About/Preview.png" alt="Aquaponics">
   </a>
   <br>
