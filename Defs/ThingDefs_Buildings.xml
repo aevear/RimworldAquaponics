@@ -1,78 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
 <Defs>
-    <!-- Creates an item - Aquaponics table-->
+
+    <!-- Building Definition -->
     <ThingDef ParentName="BuildingBase">
-        <defName>AquaponicsBasin</defName>
-        <label>Aquaponics basin</label>
-        <description>A nutrient bath for growing plants while also raising fish for meat. Fish
-            require temperatures between 10°C and 42°C to survive and reproduce.</description>
-        <thingClass>Aquaponics.Building_Aquaponics</thingClass>
-        <noRightClickDraftAttack>true</noRightClickDraftAttack>
+        <defName>AquaponicsBay</defName>
+        <label>aquaponics bay</label>
+        <description>An advanced growing system that combines hydroponics with fish farming. Grow
+            plants while raising fish in a symbiotic cycle. Fish must be added to start the cycle,
+            and can be harvested once the population reaches sufficient size.</description>
+        <thingClass>AquaponicsMod.Building_AquaponicsBay</thingClass>
         <graphicData>
             <texPath>Aquaponics_Basin/Aquaponics</texPath>
             <graphicClass>Graphic_Multi</graphicClass>
-            <drawSize>1,4</drawSize>
+            <drawSize>(1,4)</drawSize>
+            <damageData>
+                <cornerTL>Damage/Corner</cornerTL>
+                <cornerTR>Damage/Corner</cornerTR>
+                <cornerBL>Damage/Corner</cornerBL>
+                <cornerBR>Damage/Corner</cornerBR>
+            </damageData>
         </graphicData>
         <altitudeLayer>LowPlant</altitudeLayer>
-        <defaultPlacingRot>East</defaultPlacingRot>
         <passability>PassThroughOnly</passability>
-        <pathCost>30</pathCost>
+        <pathCost>60</pathCost>
+        <castEdgeShadows>true</castEdgeShadows>
+        <constructEffect>ConstructMetal</constructEffect>
         <fillPercent>0.30</fillPercent>
-        <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
         <statBases>
             <WorkToBuild>2800</WorkToBuild>
             <MaxHitPoints>180</MaxHitPoints>
             <Flammability>0.5</Flammability>
             <Cleanliness>-3</Cleanliness>
         </statBases>
-        <size>1,4</size>
+        <size>(1,4)</size>
         <costList>
             <Steel>100</Steel>
             <ComponentIndustrial>1</ComponentIndustrial>
         </costList>
-        <fertility>2.8</fertility>
+        <fertility>1.61</fertility>
         <building>
             <defaultPlantToGrow>Plant_Rice</defaultPlantToGrow>
             <sowTag>Hydroponic</sowTag>
+            <buildingTags>
+                <li>Production</li>
+            </buildingTags>
         </building>
         <tickerType>Rare</tickerType>
-        <comps>
-            <li Class="CompProperties_Forbiddable" />
-            <li Class="CompProperties_Flickable" />
-            <li Class="CompProperties_Power">
-                <compClass>CompPowerTrader</compClass>
-                <basePowerConsumption>70</basePowerConsumption>
-            </li>
-        </comps>
+        <constructionSkillPrerequisite>4</constructionSkillPrerequisite>
         <researchPrerequisites>
             <li>Hydroponics</li>
         </researchPrerequisites>
         <terrainAffordanceNeeded>Medium</terrainAffordanceNeeded>
         <designationCategory>Production</designationCategory>
+        <staticSunShadowHeight>0.20</staticSunShadowHeight>
+        <surfaceType>Item</surfaceType>
+        <canOverlapZones>false</canOverlapZones>
     </ThingDef>
 
-    <!-- Defines a work type for populating aquaponics -->
+    <!-- Job Definitions -->
+    <JobDef>
+        <defName>AddFishToAquaponics</defName>
+        <driverClass>AquaponicsMod.JobDriver_AddFish</driverClass>
+        <reportString>adding fish to aquaponics bay.</reportString>
+        <joyDuration>4000</joyDuration>
+        <joyGainRate>1</joyGainRate>
+    </JobDef>
+
+    <JobDef>
+        <defName>HarvestFishFromAquaponics</defName>
+        <driverClass>AquaponicsMod.JobDriver_HarvestFish</driverClass>
+        <reportString>harvesting fish from aquaponics bay.</reportString>
+        <joyDuration>4000</joyDuration>
+        <joyGainRate>1</joyGainRate>
+    </JobDef>
+
+    <!-- Work Giver Definitions -->
     <WorkGiverDef>
-        <defName>PopulateAquaponics</defName>
-        <label>populate aquaponics</label>
-        <giverClass>Aquaponics.WorkGiver_PopulateAquaponics</giverClass>
-        <workType>Handling</workType>
-        <priorityInType>100</priorityInType>
-        <verb>stock</verb>
-        <gerund>stocking</gerund>
+        <defName>AddFish</defName>
+        <label>add fish to aquaponics</label>
+        <giverClass>AquaponicsMod.WorkGiver_AddFish</giverClass>
+        <workType>Growing</workType>
+        <priorityInType>50</priorityInType>
+        <verb>add fish to</verb>
+        <gerund>adding fish to</gerund>
         <requiredCapacities>
             <li>Manipulation</li>
         </requiredCapacities>
         <prioritizeSustains>true</prioritizeSustains>
     </WorkGiverDef>
 
-    <!-- Defines a job for populating aquaponics -->
-    <JobDef>
-        <defName>PopulateAquaponics</defName>
-        <driverClass>Aquaponics.JobDriver_PopulateAquaponics</driverClass>
-        <reportString>stocking aquaponics with fish.</reportString>
-        <joyDuration>4000</joyDuration>
-        <joyMaxParticipants>1</joyMaxParticipants>
-        <casualInterruptible>false</casualInterruptible>
-    </JobDef>
+    <WorkGiverDef>
+        <defName>HarvestFish</defName>
+        <label>harvest fish from aquaponics</label>
+        <giverClass>AquaponicsMod.WorkGiver_HarvestFish</giverClass>
+        <workType>Growing</workType>
+        <priorityInType>51</priorityInType>
+        <verb>harvest fish from</verb>
+        <gerund>harvesting fish from</gerund>
+        <requiredCapacities>
+            <li>Manipulation</li>
+        </requiredCapacities>
+        <prioritizeSustains>true</prioritizeSustains>
+    </WorkGiverDef>
 
 </Defs>
